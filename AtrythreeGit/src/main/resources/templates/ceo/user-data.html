@@ -1,0 +1,33 @@
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<title>Assignment-2</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" th:href="@{/styleSheet/style.css}"/>    
+
+
+</head>
+		<body>
+			<h1>Assignmt #2 using thymeleaf</h1>
+			<h1>Welcome you are logged in</h1>
+				
+		
+		<table>
+   <tr>  
+            <td><h4>User Name: </h4></td>  
+            <td><h4 th:text="${user.username}"></h4></td>  
+        </tr>  
+        <tr>  
+            <td><h4>password: </h4></td>  
+            <td><h4 th:text="${user.password}"></h4></td>  
+        </tr>  
+</table>
+
+
+
+		
+	
+		</body>
+		
+
+
+</html>

@@ -1,0 +1,199 @@
+ <html xmlns:th="http://www.thymeleaf.org">
+ 
+ <head>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ 
+    <title>Regus Pharma</title>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Regus Pharma</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/Registeration"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<form class="border border-light p-5"   th:action="@{/logout}" th:method="post" >
+ 
+ <button class="btn btn-info " type="submit" value="loggout">logout</button>
+ 
+ </form>
+
+    </ul>
+  </div>
+</nav>
+  
+ 
+
+ 
+ 
+         <div sec:authorize="hasRole('USER')">Text visible to user.</div>
+        <div sec:authorize="hasRole('CEO')">Text visible to admin.</div>
+        <div sec:authorize="isAuthenticated()">
+            Text visible only to authenticated users.
+        </div>
+        Authenticated username:
+        <div sec:authentication="name"></div>
+        Authenticated user roles:
+        <div sec:authentication="principal.authorities"></div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <center><h1>SignIn As</h1></center>
+  <div class="container">
+
+      <h1 class="my-4">
+        <small>Our Team</small>
+      </h1>
+    
+    
+      <div class="row" style="margin-left: 80px;">
+        <div class="col-lg-12">
+          <h2 class="my-4">Sign In AS</h2>
+        </div>
+        </div>
+        
+	<div class="row" >
+        
+										<div class="col-sm-1">
+										</div>
+<div sec:authorize="hasRole('CEO')">Text visible to admin.
+
+        
+        <div class="col-sm-2">
+         	 	  
+         	 	 <!-- <a th:href="@{/ceo}"> -->
+         	 	 <a th:href="@{/Ceo}">
+          		 <img th:src="@{/images/ceo.png}"  style="width: 160px;height: 160px;" />
+                  <h3>
+		          <small>CEO</small></a>
+		          </h3>          
+		 </div>
+       
+<form class="border border-light p-5"   th:action="@{/logout}" th:method="post" >
+ 
+ <button class="btn btn-info " type="submit" value="loggout">logout</button>
+ 
+ </form>
+ 
+</div>        
+        
+        
+        
+<div sec:authorize="hasRole('BusinessHead')">Text visible to BusinessHead.        
+         <div class="col-sm-2">
+		           
+		          <a th:href="@{/BusinessHead}">
+		           <img th:src="@{/images/businesshead.png}"  style="width: 160px;height: 160px;" />
+		          <h3>
+		            <small>BUSINESS HEAD</small></a>
+		          </h3>
+		          
+		          
+		          
+  
+        </div>
+        
+        
+<form class="border border-light p-5"   th:action="@{/logout}" th:method="post" >
+ 
+ <button class="btn btn-info " type="submit" value="loggout">logout</button>
+ 
+ </form>
+ 
+</div>
+
+
+
+<div sec:authorize="hasRole('RegionalHead')">Text visible to RegionalHead.
+
+ 		<div class="col-sm-2">
+		          <a th:href="@{/RegionalManager}">
+		          <img th:src="@{/images/areamanager.png}"  style="width: 160px;height: 160px;" />
+		          <h3>
+		            <small>REAGIONAL MANAGER</small></a>
+		          </h3>
+		          
+        </div>
+ 
+        
+<form class="border border-light p-5"   th:action="@{/logout}" th:method="post" >
+ 
+ <button class="btn btn-info " type="submit" value="loggout">logout</button>
+ 
+ </form>
+  
+ </div> 
+<div sec:authorize="hasRole('AreaManager')">Text visible to AreaManager.
+		
+		
+		 <div class="col-sm-2">
+		           <a th:href="@{/AreaManager}">
+		          <img th:src="@{/images/regionalmanager.png}"  style="width: 160px;height: 160px;" />
+		          <h3> 
+		           <small>AREA MANAGER</small></a>
+		          </h3>
+        </div>
+        
+  
+   <!-- <a  th:action="@{/logout}" class="btn btn-danger">Back</a> -->
+        
+<form class="border border-light p-5"   th:action="@{/logout}" th:method="post" >
+ 
+ <button class="btn btn-info " type="submit" value="loggout">logout</button>
+ 
+ </form>
+  
+ </div>   
+
+<div sec:authorize="hasRole('SalesMan')">Text visible to SalesMan.
+         <div class="col-sm-2">
+		           <a th:href="@{/salesMan}">
+		         <img th:src="@{/images/saleman.png}" style="width: 160px;height: 160px;" />
+		          <h3>            
+		          <small>SALES MAN</small></a>
+		          </h3>
+        </div>
+        
+<form class="border border-light p-5"   th:action="@{/logout}" th:method="post" >
+ 
+ <button class="btn btn-info " type="submit" value="loggout">logout</button>
+ 
+ </form>
+ 
+</div>        
+				
+							<div class="col-sm-1">
+							</div>
+
+	</div>
+	
+	
+	
+<div sec:authorize="hasRole('ADMIN')">Text visible to Admin.
+
+ 		<div class="col-sm-2">
+		          <a th:href="@{/ManageRole}">
+		          <img th:src="@{/images/areamanager.png}"  style="width: 160px;height: 160px;" />
+		          <h3>
+		            <small>Admin</small></a>
+		          </h3>
+		          
+        </div>
+	
+	</div></div></body></html>
+	
+	
+	

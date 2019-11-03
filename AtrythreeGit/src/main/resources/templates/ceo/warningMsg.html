@@ -1,0 +1,73 @@
+ <html xmlns:th="http://www.thymeleaf.org">
+ 
+ <head>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ 
+    <title>Regus Pharma</title>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Regus Pharma</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      
+     <!--  <li><div  sec:authentication="name"><span class="glyphicon glyphicon-user"></span>User</div></li> -->
+      <li><a href="/Registeration"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>User <div  sec:authentication="name"></div></a></li>
+      
+    </ul>
+  </div>
+</nav>
+  
+		
+		<div class="container">
+			<h1>Assignmt #2 using thymeleaf</h1>
+			<h1>Welcome you are logged in</h1>
+		
+		
+		
+		
+  <!-- 
+  <div class="col-md-4">
+  <label class="control-label" for="textinput">Feedback Added By</label>  
+  <input class="form-control input-md" placeholder="No Data Returned" value="@if($flag == 1){{$feedbackRecord->assignedBy->name}}@endif" readonly>    
+  </div>
+
+  <div class="col-md-4">
+  <label class="control-label" for="textinput">Feedback Added Date</label>  
+  <input class="form-control input-md" placeholder="No Data Returned" value="@if($flag == 1){{substr($feedbackRecord->created_at, 0, 10)}}@endif" readonly>    
+  </div>
+</div>
+ -->
+ <br>
+<!-- Textarea -->
+<div class="form-group row">
+  <label class="col-md-4 control-label" for="textarea">Warning Text</label>
+  <div class="col-md-12">                     
+    <textarea rows="5" class="form-control" placeholder="No Data Returned" th:text="${user.textarea}"/>  
+  </div>
+  
+  
+</div>
+<br>
+<!-- Button -->
+
+<div class="form-group row">
+  
+  <div class="col-md-4">
+    <a th:href="@{/Ceo}" class="btn btn-danger">Back</a>
+  </div>
+</div>
+		
+
+</div>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">  
+<head>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ 
+    <title>Regus Pharma</title>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Regus Pharma</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/Registeration"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+
+
+ 
+  <div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+  
+<div class="error" th:if="${param.error}"
+     th:with="errorMsg=${session['SPRING_SECURITY_LAST_EXCEPTION'].message}">
+    Reason: <span th:text="${errorMsg}">Wrong input! hhakhakhahajhahajkhakjh</span>
+</div>
+
+<form class="border border-light p-5"   th:action="@{/AutheticateUser}" th:method="post" >
+
+    <p class="h4 mb-4 text-center">Sign in</p>
+
+  <!--   <input type="email" id="email" name="email" class="form-control mb-4" placeholder="E-mail">
+
+<br> -->
+ <input type="text" id="username" name="username" class="form-control mb-4" placeholder="username">
+
+<br>
+
+    <input type="password" id="password" name="password" class="form-control mb-4" placeholder="Password">
+<br>
+    <div class="d-flex justify-content-between">
+        <div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+            </div>
+        </div>
+        <div>
+            <a href="">Forgot password?</a>
+        </div>
+    </div>
+
+    <button class="btn btn-info " type="submit">Sign in</button>
+     </form>
+
+</div>
+<div class="col-sm-3"></div>
+</div>
+</div></body></html>

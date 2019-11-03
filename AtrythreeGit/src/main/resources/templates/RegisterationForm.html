@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">  
+<head>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ 
+    <title>Regus Pharma</title>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Regus Pharma</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/Registeration"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+
+
+
+  
+  <div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+  
+  <form class="border border-light p-5" th:object="${register}"  th:action="@{/registeration-success}" method="post">
+
+    <p class="h4 mb-4 text-center">	Registeration Form</p>
+
+    <label for="textInput">User Name</label>
+    <input type="text" id="name" name="name" class="form-control mb-4" placeholder="User Name">
+
+    <label for="emailInput">Email </label>
+    <input type="email" id="email" name="email" class="form-control mb-4" placeholder="Email ">
+
+    <label for="passwdInput">Password </label>
+    <input type="password" id="password" name="password" class="form-control mb-4" placeholder="Password ">
+    
+    
+    
+
+   <!--  <label for="passwdInput">Confirm Password </label>
+    <input type="password" id="passwdInput" name ="confirmpass" class="form-control mb-4" placeholder=" Confirm Password ">
+ -->
+   <!--  <label for="textInput">Text input Label</label>
+    <input type="text" id="textInput" name ="contactno" id="contactno" class="form-control mb-4" placeholder="Contact No">
+ -->
+ <br>
+    <button class="btn btn-info"  type="submit">Register</button>
+  
+  
+  </div>
+  <div class="col-sm-3"></div>
+</div>
+    
+        
+                
+        
+        
+        
+        
+     </div>   
+        
+        
+        
+        
+</body></html>

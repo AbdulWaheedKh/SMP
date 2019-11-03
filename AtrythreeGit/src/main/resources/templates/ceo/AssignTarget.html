@@ -1,0 +1,53 @@
+ <html xmlns:th="http://www.thymeleaf.org">
+ 
+ <head>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ 
+    <title>Regus Pharma</title>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Regus Pharma</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      
+     <!--  <li><div  sec:authentication="name"><span class="glyphicon glyphicon-user"></span>User</div></li> -->
+      <li><a href="/Registeration"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>User <div  sec:authentication="name"></div></a></li>
+      
+    </ul>
+  </div>
+</nav>
+  
+
+<h1>Assign Target  form to assign targets</h1>
+
+
+<h1>Form</h1>
+    <form action="#" th:action="@{/greeting-submit}" th:object="${greeting}" method="post">
+    	<p>Id: <input type="text" th:field="*{id}" /></p>
+    	
+    	<p>AssignTarget: <input type="text" th:field="*{assigntarget}" /></p>
+    	<!-- <span th:if="${#fields.hasErrors('assigntarget')}" th:errors="*{assigntarget}"></span> -->
+        <p>Add feedback: <input type="text" th:field="*{addfeedback}" /></p>
+        <!-- <span th:if="${#fields.hasErrors('addfeedback')}" th:errors="*{addfeedback}"></span> -->
+        <p>Issue Warning: <input type="text" th:field="*{issuewarning}" /></p>
+        <!-- <span th:if="${#fields.hasErrors('issuewarning')}" th:errors="*{issuewarning}"></span> -->
+        
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+    
+    
+    
+
+<a href= "/Ceo"><button class="btn btn-info" type="submit" value="Back">Back to main page</button></a>
+</body>
+</html>
